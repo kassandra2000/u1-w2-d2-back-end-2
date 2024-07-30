@@ -99,11 +99,9 @@ public class Es3 {
         }
 
         System.out.println("--------------------esercizio 4----------------------------------");
-        Collection<Long> keyAddressBook2 = addressBook.values();
-        List<Long> keyList2 = new ArrayList<>(keyAddressBook2);
+        Collection<Long> valueAddressBook2 = addressBook.values();
+        List<Long> keyList2 = new ArrayList<>(valueAddressBook2);
 
-        System.out.println(keyAddressBook2);
-        System.out.println(keyList2);
         System.out.println("inserisci il numero  da cercare: ");
         for (int i = 0; i < keyList2.size(); i++) {
             System.out.println((i + 1) + ". " + keyList2.get(i));
@@ -124,23 +122,23 @@ public class Es3 {
 
         switch (choice2) {
             case 1:
-                searchInt();
+                System.out.println(searchInt(keyList2.getFirst()));
                 break;
             case 2:
-                searchInt();
+                System.out.println(searchInt(keyList2.get(1)));
                 break;
             case 3:
-                searchInt();
+                System.out.println(searchInt(keyList2.get(2)));
                 break;
             case 4:
-                searchInt();
+                System.out.println(searchInt(keyList2.get(3)));
                 break;
             case 5:
-                searchInt();
+                System.out.println(searchInt(keyList2.get(4)));
                 break;
             case 6:
 
-                searchInt();
+                System.out.println(searchInt(keyList2.get(5)));
                 break;
             default:
                 System.out.println("non è stato possibile eliminare nessun elemento");
@@ -163,9 +161,9 @@ public class Es3 {
         return addressBook.get(str);
     }
 
-    public static Long searchInt(long value) {
+    public static String searchInt(long value) {
 
-        return addressBook.get(value);
+        return String.valueOf(addressBook.get(value));
     }
 
 
