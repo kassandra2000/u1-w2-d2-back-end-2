@@ -9,17 +9,19 @@ public class Es1 {
 
         Scanner sc = new Scanner(System.in);
 
-        int numOfElements;
+        int numOfElements = 0;
+//
+//
+        while (numOfElements == 0) {
+            System.out.println("quanti elementi vuoi inserire nell'array?");
+            try {
+                numOfElements = Integer.parseInt(sc.nextLine());
 
-        try {
-            System.out.println("Quanti elementi vuoi inserire nell'array? ");
-            numOfElements = Integer.parseInt(sc.nextLine());
-        } catch (NumberFormatException e) {
-            System.out.println("Errore devi inserire un numero");
-            numOfElements = Integer.parseInt(sc.nextLine());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            numOfElements = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Errore devi inserire un numero");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
 
 
@@ -27,7 +29,11 @@ public class Es1 {
             System.out.println("inserisci la parola");
             String word = sc.nextLine();
             if (arr.add(word)) arr.add(word);
-            else arrOfDuplicate.add(word);
+            else {
+                System.out.println("parola già presente !!");
+                arrOfDuplicate.add(word);
+                i--;
+            }
         }
 
         System.out.println("il numero delle parole distinte è: " + arr.toArray().length);
