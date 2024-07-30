@@ -122,23 +122,23 @@ public class Es3 {
 
         switch (choice2) {
             case 1:
-                System.out.println(searchInt(keyList2.getFirst()));
+                searchInt(keyList2.getFirst());
                 break;
             case 2:
-                System.out.println(searchInt(keyList2.get(1)));
+                searchInt(keyList2.get(1));
                 break;
             case 3:
-                System.out.println(searchInt(keyList2.get(2)));
+                searchInt(keyList2.get(2));
                 break;
             case 4:
-                System.out.println(searchInt(keyList2.get(3)));
+                searchInt(keyList2.get(3));
                 break;
             case 5:
-                System.out.println(searchInt(keyList2.get(4)));
+                searchInt(keyList2.get(4));
                 break;
             case 6:
 
-                System.out.println(searchInt(keyList2.get(5)));
+                searchInt(keyList2.get(5));
                 break;
             default:
                 System.out.println("non è stato possibile eliminare nessun elemento");
@@ -161,9 +161,14 @@ public class Es3 {
         return addressBook.get(str);
     }
 
-    public static String searchInt(long value) {
+    public static void searchInt(Long value) {
+        for (String name : addressBook.keySet()) {
+            if (value.equals(addressBook.get(name))) {
 
-        return String.valueOf(addressBook.get(value));
+                System.out.println("il contatto che cercavi è: " + name + " e il suo numero è: " + addressBook.get(name));
+            }
+        }
+
     }
 
 
